@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
+import css from './Navigation.module.css';
 
 export const Navigation = () => {
   const [value, setValue] = useState('one');
@@ -12,18 +13,19 @@ export const Navigation = () => {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        textColor="secondary"
-        indicatorColor="secondary"
-        aria-label="secondary tabs example"
-      >
-        <Tab value="one" label="Home" component={NavLink} to="/" />
-
-        <Tab value="two" label="Movies" component={NavLink} to="/movies" />
-      </Tabs>
-    </Box>
+    <div className={css.Container_Navigation}>
+      <Box sx={{ width: '100%' }}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          textColor="secondary"
+          indicatorColor="secondary"
+          aria-label="secondary tabs example"
+        >
+          <Tab value="one" label="Home" component={NavLink} to="/" />
+          <Tab value="two" label="Movies" component={NavLink} to="/movies" />
+        </Tabs>
+      </Box>
+    </div>
   );
 };

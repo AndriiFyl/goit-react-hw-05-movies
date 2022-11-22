@@ -1,0 +1,34 @@
+.Container_Form {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    background-color: rgb(227, 206, 230);
+
+}
+ 
+.Form {
+    margin-left: 20px;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+.Input {
+    height: 25px;
+    width: 300px;
+    background-color: white;
+    border: none;
+    padding-right: 27px;
+}
+
+.Search_Btn {
+    height: 31px;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 3px;
+    top: 0;
+}
+
