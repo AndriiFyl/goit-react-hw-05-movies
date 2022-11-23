@@ -3,23 +3,27 @@
     height: 50px;
     width: 100%;
     align-items: center;
+    justify-content: center;
     background-color: rgb(227, 206, 230);
 
 }
  
 .Form {
-    margin-left: 20px;
     align-items: center;
     display: flex;
     position: relative;
+    
 }
 
 .Input {
-    height: 25px;
-    width: 300px;
+    border-radius: 5px;
+    height: 30px;
+    width: 450px;
     background-color: white;
     border: none;
     padding-right: 27px;
+    padding-left: 5px;
+
 }
 
 .Search_Btn {
@@ -29,6 +33,6 @@
     cursor: pointer;
     position: absolute;
     right: 3px;
-    top: 0;
+    top: 2px;
 }
 

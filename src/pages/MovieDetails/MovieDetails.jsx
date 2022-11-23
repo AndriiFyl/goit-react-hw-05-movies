@@ -27,25 +27,56 @@ export const MovieDetails = () => {
   return (
     <>
       <div className={css.Container_Movie}>
-        <h2 className={css.head_Movie}>{movie.title}</h2>
         <button className={css.Btn_Back} type="button" onClick={handleGoBack}>
           <FiChevronsLeft size={100} />
         </button>
+        <img
+          className={css.Poster}
+          src={`${baseUrl + movie.poster_path}`}
+          alt={movie.title}
+        />
         <div className={css.Wrapper_Movie_Info}>
-          <img
-            className={css.Poster}
-            src={`${baseUrl + movie.poster_path}`}
-            alt={movie.title}
-          />
-          <p className={css.Movie_description}>Overview: {movie.overview}</p>
+          <h2 className={css.head_Movie}>
+            {movie.title} ({movie.release_date.slice(0, 4)})
+          </h2>
+          <p className={css.Movie_description}>
+            <span className={css.Accent_description}>Overview:</span>{' '}
+            {movie.overview}
+          </p>
+          <p className={css.Movie_description}>
+            <span className={css.Accent_description}>Rating:</span>{' '}
+            {movie.vote_average.toFixed(1)}{' '}
+          </p>
+          <p className={css.Movie_description}>
+            <span className={css.Accent_description}>Votes:</span>{' '}
+            {movie.vote_count}
+          </p>
+
+          <Link
+            className={css.Additional_Info}
+            to="cast"
+            state={location.state}
+          >
+            Cast
+          </Link>
+
+          <Link
+            className={css.Additional_Info}
+            to="reviews"
+            state={location.state}
+          >
+            Reviews
+          </Link>
         </div>
       </div>
-      <Link to="cast" state={location.state}>
+
+      {/* <Link className={css.Additional_Info} to="cast" state={location.state}>
         Cast
       </Link>
-      <Link to="reviews" state={location.state}>
+
+      <Link className={css.Additional_Info} to="reviews" state={location.state}>
         Reviews
-      </Link>
+      </Link> */}
 
       <Outlet />
     </>

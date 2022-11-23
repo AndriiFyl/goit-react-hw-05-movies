@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getReviews } from 'services/api';
+import css from './Reviews.module.css';
 
 export const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -11,14 +12,18 @@ export const Reviews = () => {
   }, [movieId]);
 
   return (
-    <div>
+    <div className={css.Wrapper_Reviews}>
       <ul>
-        {reviews.map(review => (
-          <li key={review.author}>
-            <h2>Author: {review.author}</h2>
-            <p>{review.content}</p>
-          </li>
-        ))}
+        {reviews.length > 0 ? (
+          reviews.map(review => (
+            <li className={css.Review_Description} key={review.author}>
+              <h2>Author: {review.author}</h2>
+              <p>{review.content}</p>
+            </li>
+          ))
+        ) : (
+          <span className={css.Notification_Reviews}>Not any comments...</span>
+        )}
       </ul>
     </div>
   );
