@@ -37,9 +37,8 @@
 }
 
 .List_Wrapper {
-    background-image: linear-gradient(to right, rgba(232, 209, 246, 0.9), rgba(232, 209, 246, 0.9)),
-     url(../../images/cameraImage.jpg);
-    background-size: 20%;
-  
+    background-image: linear-gradient(to right, rgba(244, 236, 249, 0.95), rgba(244, 236, 249, 0.95)),
+            url(../../images/cameraImage.jpg);
+        background-size: 20%;
     min-height: 1000px;
 }

@@ -28,7 +28,7 @@ export const MovieDetails = () => {
   }
 
   return (
-    <>
+    <div className={css.Global_Wrapper}>
       <div className={css.Container_Movie}>
         <button className={css.Btn_Back} type="button" onClick={handleGoBack}>
           <FiChevronsLeft size={100} />
@@ -82,16 +82,7 @@ export const MovieDetails = () => {
           </Link>
         </div>
       </div>
-
-      {/* <Link className={css.Additional_Info} to="cast" state={location.state}>
-        Cast
-      </Link>
-
-      <Link className={css.Additional_Info} to="reviews" state={location.state}>
-        Reviews
-      </Link> */}
-
       <Outlet />
-    </>
+    </div>
   );
 };
