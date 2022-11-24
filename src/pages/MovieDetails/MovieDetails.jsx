@@ -7,6 +7,9 @@ import css from './MovieDetails.module.css';
 import { FiChevronsLeft } from 'react-icons/fi';
 
 const baseUrl = 'https://image.tmdb.org/t/p/w500/';
+const defaultPoster =
+  'https://abrakadabra.fun/uploads/posts/2022-03/1647059759_1-abrakadabra-fun-p-kinolenta-raspechatat-1.png';
+
 export const MovieDetails = () => {
   const { movieId } = useParams();
   const location = useLocation();
@@ -32,7 +35,7 @@ export const MovieDetails = () => {
         </button>
         <img
           className={css.Poster}
-          src={`${baseUrl + movie.poster_path}`}
+          src={movie.poster_path ? baseUrl + movie.poster_path : defaultPoster}
           alt={movie.title}
         />
         <div className={css.Wrapper_Movie_Info}>
@@ -40,15 +43,25 @@ export const MovieDetails = () => {
             {movie.title} ({movie.release_date.slice(0, 4)})
           </h2>
           <p className={css.Movie_description}>
-            <span className={css.Accent_description}>Overview:</span>{' '}
-            {movie.overview}
+            <span className={css.Accent_Header_description}>Overview:</span>{' '}
+            {movie.overview ? (
+              movie.overview
+            ) : (
+              <span className={css.Accent_Description}>Not Found</span>
+            )}
           </p>
           <p className={css.Movie_description}>
-            <span className={css.Accent_description}>Rating:</span>{' '}
-            {movie.vote_average.toFixed(1)}{' '}
+            <span className={css.Accent_Header_description}>Rating:</span>{' '}
+            {movie.vote_average === 0 ? (
+              <span className={css.Accent_Description}>
+                Not available rating
+              </span>
+            ) : (
+              movie.vote_average.toFixed(1)
+            )}
           </p>
           <p className={css.Movie_description}>
-            <span className={css.Accent_description}>Votes:</span>{' '}
+            <span className={css.Accent_Header_description}>Votes:</span>{' '}
             {movie.vote_count}
           </p>
 

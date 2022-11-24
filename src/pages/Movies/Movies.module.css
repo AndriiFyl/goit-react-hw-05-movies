@@ -4,7 +4,7 @@
     width: 100%;
     align-items: center;
     justify-content: center;
-    background-color: rgb(227, 206, 230);
+    background-color: rgb(209, 127, 221);
 
 }
  
@@ -36,3 +36,10 @@
     top: 2px;
 }
 
+.List_Wrapper {
+    background-image: linear-gradient(to right, rgba(232, 209, 246, 0.9), rgba(232, 209, 246, 0.9)),
+     url(../../images/cameraImage.jpg);
+    background-size: 20%;
+  
+    min-height: 1000px;
+}

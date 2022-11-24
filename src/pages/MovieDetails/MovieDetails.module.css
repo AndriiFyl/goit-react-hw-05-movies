@@ -26,6 +26,8 @@
 
 .Poster {
     border-radius: 5px;
+    width: 400px;
+    height: 625px;
 }
 
 
@@ -35,7 +37,7 @@
 }
 
  
-.Accent_description {
+.Accent_Header_description {
     font-weight: bold;
 }
 
@@ -54,4 +56,8 @@ margin-right: 15px;
 margin-bottom: 16px;
 margin-top: 16px;
 font-style: italic;
+}
+
+.Accent_Description {
+    color: rgb(188, 30, 30);
 }

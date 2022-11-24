@@ -22,7 +22,7 @@ export const Reviews = () => {
             </li>
           ))
         ) : (
-          <span className={css.Notification_Reviews}>Not any comments...</span>
+          <span className={css.Notification_Reviews}>Not any reviews...</span>
         )}
       </ul>
     </div>

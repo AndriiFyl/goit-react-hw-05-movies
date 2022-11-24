@@ -40,7 +40,9 @@ export const Movies = () => {
           </button>
         </form>
       </div>
-      <Movieslist movies={movies} />
+      <div className={css.List_Wrapper}>
+        <Movieslist movies={movies} />
+      </div>
     </>
   );
 };
