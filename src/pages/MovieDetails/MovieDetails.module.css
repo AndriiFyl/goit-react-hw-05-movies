@@ -8,6 +8,7 @@
 background-image: linear-gradient(to right, rgba(244, 236, 249, 0.95), rgba(244, 236, 249, 0.95)),
         url(../../images/cameraImage.jpg);
     background-size: 20%;
+    min-height: 100vh;
 }
 
 .head_Movie {
@@ -63,4 +64,12 @@ font-style: italic;
 
 .Accent_Description {
     color: rgb(188, 30, 30);
+}
+
+.Error_Message {
+    color: rgb(188, 30, 30);
+    font-size: 18px;
+    font-style: italic;
+    display: flex;
+    align-items: center;
 }

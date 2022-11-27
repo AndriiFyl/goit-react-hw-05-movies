@@ -4,10 +4,12 @@ import { useSearchParams } from 'react-router-dom';
 import { getMoviesByQuery } from 'services/api';
 import { Movieslist } from 'components/MoviesList/MoviesList';
 import css from './Movies.module.css';
+import { Loader } from 'utils/Loader';
 export const Movies = () => {
   const [query, setQuery] = useState('');
   const [searchParams, setSearchParams] = useSearchParams();
   const [movies, setMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = event => {
     setQuery(event.target.value);
@@ -22,8 +24,16 @@ export const Movies = () => {
     if (!query) {
       return;
     }
-    getMoviesByQuery(query).then(setMovies);
+    setIsLoading(true);
+    getMoviesByQuery(query)
+      .then(setMovies)
+      .finally(() => setIsLoading(false));
   }, [searchParams]);
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
     <>
       <div className={css.Container_Form}>
